@@ -90,17 +90,17 @@ This tool is designed for:
 
 ## 🧩 Architecture
 Input Layer
-↓
+->
 Cleaner
-↓
+->
 Compressor Engine
-↓
+->
 Semantic Summarizer
-↓
+->
 Chunk Manager
-↓
+->
 Project Vault
-↓
+->
 AI Teleport Layer
-↓
+->
 Target AI Platform
