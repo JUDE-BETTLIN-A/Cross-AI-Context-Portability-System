@@ -1,0 +1,205 @@
+/* ============================================================
+   AI Context Compressor — Injected Styles
+   Scoped with 'acc-' prefix to avoid conflicts
+   ============================================================ */
+
+/* Floating Teleport Button */
+#acc-teleport-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6c5ce7, #a855f7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 999999;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+#acc-teleport-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(168, 85, 247, 0.6);
+}
+
+/* Dropdown Menu */
+#acc-teleport-menu {
+  position: fixed;
+  bottom: 82px;
+  right: 24px;
+  width: 220px;
+  background: #1a1a2e;
+  border: 1px solid #2a2a4a;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  z-index: 999999;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px) scale(0.95);
+  pointer-events: none;
+  transition: all 0.25s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#acc-teleport-menu.acc-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: all;
+}
+
+.acc-menu-header {
+  padding: 12px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #a855f7;
+  background: rgba(168, 85, 247, 0.08);
+  border-bottom: 1px solid #2a2a4a;
+}
+
+.acc-menu-label {
+  padding: 8px 14px 4px;
+  font-size: 10px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.acc-menu-item {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: #e0e0f0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.acc-menu-item:hover {
+  background: rgba(168, 85, 247, 0.15);
+}
+
+.acc-menu-divider {
+  height: 1px;
+  background: #2a2a4a;
+  margin: 4px 0;
+}
+
+/* Notification Toast */
+#acc-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #1a1a2e, #2a2a4a);
+  border: 1px solid #a855f7;
+  border-radius: 10px;
+  color: #e0e0f0;
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  z-index: 9999999;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+  animation: acc-slide-in 0.4s ease;
+  max-width: 360px;
+}
+
+#acc-notification.acc-fade-out {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+}
+
+@keyframes acc-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Teleport Panel (fallback when clipboard fails) */
+#acc-teleport-panel {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 440px;
+  max-height: 70vh;
+  background: #1a1a2e;
+  border: 1px solid #a855f7;
+  border-radius: 14px;
+  z-index: 9999999;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow: hidden;
+}
+
+.acc-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(168, 85, 247, 0.1);
+  border-bottom: 1px solid #2a2a4a;
+  font-size: 14px;
+  font-weight: 600;
+  color: #a855f7;
+}
+
+.acc-panel-close {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 0 4px;
+}
+
+.acc-panel-close:hover {
+  color: #fff;
+}
+
+.acc-panel-desc {
+  padding: 12px 18px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.acc-panel-textarea {
+  width: calc(100% - 36px);
+  height: 200px;
+  margin: 0 18px;
+  background: #0f0f1a;
+  border: 1px solid #2a2a4a;
+  border-radius: 8px;
+  color: #e0e0f0;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  padding: 10px;
+  resize: vertical;
+}
+
+.acc-panel-copy {
+  display: block;
+  width: calc(100% - 36px);
+  margin: 12px 18px 18px;
+  padding: 10px;
+  background: linear-gradient(135deg, #6c5ce7, #a855f7);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.acc-panel-copy:hover {
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
